@@ -1,0 +1,25 @@
+{
+  "name": "growfoodBLog",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-wait": "0.0.2",
+    "sass": "^1.16.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-"
+  },
+  "author": "FJ",
+  "license": "ISC",
+  "description": "New blog for growfood.pro/"
+}
