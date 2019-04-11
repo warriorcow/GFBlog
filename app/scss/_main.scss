@@ -1,6 +1,98 @@
+@font-face {
+    font-family: "Roboto Regular";  
+    src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Roboto Bold";  
+    src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "RobotoSlab Regular";  
+    src: url("../fonts/Roboto_Slab/RobotoSlab-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "RobotoSlab Bold";  
+    src: url("../fonts/Roboto_Slab/RobotoSlab-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+}
+
+body {
+	font-family: "Roboto Bold", sans-serif;
+	font-size: 24px;
+	line-height: 1.2;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+
+	nav ul li{
+		display: inline-block;
+		padding: 0px 20px;	
+	}
+}
+
+article {
+	background-color: gray;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	height: 100%;
+	padding: 45px 50px 30px;
+
+	.article-tag {
+		font-family: 'RobotoSlab Bold', sans-serif;
+		font-size: 12px;
+		background: rgba(40, 42, 43, 0.7);
+		border: 1px solid rgba(196, 196, 196, 0.6);
+		border-radius: 80px;
+		padding: 8px 10px;
+		margin-bottom: 15px;
+	}
+
+	.article-title {
+		margin-bottom: 20px;
+	}
+
+	.article-date {
+		font-size: 12px;
+		color: #9E9E9E;
+		font-family: "Roboto Regular", sans-serif;
+		margin-bottom: 45px;
+	}
+
+	.article-btn {
+		font-size: 16px;
+		background-color: #55C477;
+		border-radius: 6px;
+		padding: 10px 20px;
+		max-width: 200px;
+		width: 100%;
+		transition: .2s;
+
+		&:hover {
+			background-color: #4CAE69;
+		}
+	}
+}
+
+
 hr {
 	width: 100%;
-    margin: 0px 15px;
+	margin: 0;
     border: none;
     height: 1px;
     background-color: gray;
@@ -20,22 +112,8 @@ section {
 	&.last-article {
 		margin-bottom: 25px;
 
-			
-		article {
-
-		}
 	}
 
-}
-
-article {
-	background-color: gray;
-	color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 300px;
-	margin-bottom: 30px;
 }
 
 .sprite_svg {
