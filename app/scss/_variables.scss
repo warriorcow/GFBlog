@@ -31,8 +31,7 @@
 	// MEDIA QUERIES
 
 		$XS:  320px;
-		$S:   640px;
-		$M:   960px;
+		$M:   992px;
 		$XL:  1200px;
 
 		@mixin respond-to($media) {
