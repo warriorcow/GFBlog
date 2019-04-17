@@ -207,7 +207,6 @@ header {
 						position: absolute;
 						flex-direction: column;
 						background-color: #fff;
-						border-bottom: 3px solid #44C373;
 						z-index: -1;
 						max-width: 240px;
 						width: 150%;
@@ -242,7 +241,15 @@ header {
 	
 						li {
 							padding: 10px 20px;
-							border: none;
+							border-bottom: 3px solid #FFF;
+
+							@include respond-to(tablet) {
+								border-bottom: none;
+							}
+
+							&:hover {		
+								border-bottom: 3px solid #44C373;
+							}
 	
 							@include respond-to(tablet) {
 								padding: 10px 0 10px 40px;
@@ -932,6 +939,41 @@ footer {
 	}
 }
 
+.breadcrumb {
+	margin-top: 20px;
+	margin-bottom: 45px;
+	font-size: 12px;
+	
+	li {
+		display: inline-block;
+		padding-right: 5px;
+		margin-bottom: 5px;
+		color: #2A97E7;
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		&.active {
+			color: #9E9E9E;
+
+			a {
+				pointer-events: none;
+			}
+		}
+
+		&:after {
+			content: '/';
+			padding-left: 5px;
+			color: #9E9E9E;
+		}
+
+		&:last-child:after {
+			content: none;
+		}
+	}
+}
+
 .article_page {
 	font-size: 18px;
 	font-family: "Roboto Regular", sans-serif;
@@ -949,40 +991,6 @@ footer {
 	}
 
 	.leftside {
-		.breadcrumb {
-			margin-top: 20px;
-			margin-bottom: 45px;
-			font-size: 12px;
-			
-			li {
-				display: inline-block;
-				padding-right: 5px;
-				margin-bottom: 5px;
-				color: #2A97E7;
-
-				a:hover {
-					text-decoration: underline;
-				}
-
-				&.active {
-					color: #9E9E9E;
-
-					a {
-						pointer-events: none;
-					}
-				}
-
-				&:after {
-					content: '/';
-					padding-left: 5px;
-					color: #9E9E9E;
-				}
-
-				&:last-child:after {
-					content: none;
-				}
-			}
-		}
 
 		.share-container {
 			display: flex;
@@ -1396,7 +1404,7 @@ footer {
 		display: flex;
 		font-size: 18px;
 		font-family: "Roboto Bold", sans-serif;
-		margin: 0 auto;
+		margin: 50px auto 0;
 
 		@media screen and (max-width: 767px) {
 			flex-wrap: wrap;
@@ -1479,7 +1487,7 @@ hr {
 .modal-window {
 
 	.overlay {
-		// display: none;
+		display: none;
 		z-index: 50;
 		position: fixed;
 		width: 100%;
@@ -1637,6 +1645,7 @@ hr {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		z-index: 100;
+		text-align: center;
 
 		&__title {
 			max-width: 300px;
@@ -1677,10 +1686,12 @@ hr {
 		transform: translate(-50%, -50%);
 		z-index: 100;
 		min-height: 480px;
+		display: none;
 
 		@include respond-to(tablet) {
 			height: 80vh;
 			min-height: auto;
+			top: 55%;
 		}
 
 		&__title {
@@ -1785,6 +1796,19 @@ hr {
 				}
 			}
 		}
+	}
+}
+
+.page-title {
+	margin-top: 10px;
+	margin-bottom: 50px;
+
+	h1 {
+		font-size: 40px;
+	}
+
+	.breadcrumb {
+		font-family: "Roboto Regular", sans-serif;
 	}
 }
 

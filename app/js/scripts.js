@@ -34,6 +34,11 @@ $('.like a').click(function(){
     openOverlay ();
 });
 
+$('.dislike a').click(function(){
+    openDislkePopup ();
+    openOverlay ();
+});
+
 $('.article-slider').slick({
     dots: true
 });
