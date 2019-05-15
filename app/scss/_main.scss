@@ -41,6 +41,18 @@ header {
 	min-height: 100px;
 	position: relative;
 	padding: 20px 15px;
+  &::after {
+      @media screen and (min-width: 992px){
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 500%;
+        background: #000;
+        transform: translateX(-50%);
+    }
+  }
 
 
 	@include respond-to(tablet) {
@@ -61,7 +73,8 @@ header {
 			top: 0;
 			margin: 0 auto;
 			left: 50%;
-			transform: translateX(-50%);
+			-webkit-transform: translateX(-50%);
+			        transform: translateX(-50%);
 			z-index: 200;
 			max-width: 1310px;
 			width: 100%;
@@ -155,19 +168,24 @@ header {
 				&.active {
 					span {
 						background-color: transparent;
-						transform: rotateY(180deg);
+						-webkit-transform: rotateY(180deg);
+						        transform: rotateY(180deg);
 
 						&:before {
-							transform: translate3d(0,10px,0) rotate(45deg);
+							-webkit-transform: translate3d(0,10px,0) rotate(45deg);
+							        transform: translate3d(0,10px,0) rotate(45deg);
 						}
 						&:after{
-							transform: translate3d(0,-10px,0) rotate(-45deg);
+							-webkit-transform: translate3d(0,-10px,0) rotate(-45deg);
+							        transform: translate3d(0,-10px,0) rotate(-45deg);
 						}
 					}
 				}
 
 				span {
+					transition: -webkit-transform .15s;
 					transition: transform .15s;
+					transition: transform .15s, -webkit-transform .15s;
 					height: 3px;
 					width: 100%;
 					background-color: #FFF;
@@ -218,7 +236,8 @@ header {
 						width: 150%;
 						text-align: center;
 						left: 50%;
-						transform: translateX(-50%);
+						-webkit-transform: translateX(-50%);
+						        transform: translateX(-50%);
 						padding-top: 10px;
 						transition: 0.1s;
 						opacity: 0;
@@ -238,7 +257,8 @@ header {
 							position: static;
 							background: none;
 							width: 100%;
-							transform: none;
+							-webkit-transform: none;
+							        transform: none;
 							text-align: left;
 							padding-top: 0;
 							margin-top: 10px;
@@ -269,7 +289,8 @@ header {
 									background-color: #fff;
 									left: 0;
 									top: 50%;
-									transform: translateY(-50%);
+									-webkit-transform: translateY(-50%);
+									        transform: translateY(-50%);
 								}
 							}
 						}
@@ -345,7 +366,8 @@ main {
 				content: '';
 				position: absolute;
 				top: 50%;
-				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				        transform: translateY(-50%);
 				background-color: #44C373;
 				width: 75px;
 				height: 1px;
@@ -661,7 +683,8 @@ main {
 				position: absolute;
 				top: 15px;
 				left: 50%;
-				transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+				        transform: translateX(-50%);
 				z-index: 2;
 			}
 
@@ -1370,12 +1393,14 @@ footer {
 
 					&.slick-prev {
 						left: 30px;
-						transform: translateY(-50%) rotate(45deg);
+						-webkit-transform: translateY(-50%) rotate(45deg);
+						        transform: translateY(-50%) rotate(45deg);
 					}
 
 					&.slick-next {
 						right: 30px;
-						transform: translateY(-50%) rotate(-135deg);
+						-webkit-transform: translateY(-50%) rotate(-135deg);
+						        transform: translateY(-50%) rotate(-135deg);
 					}
 				}
 
@@ -1488,7 +1513,8 @@ footer {
 				position: absolute;
 				top: 15px;
 				left: 50%;
-				transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+				        transform: translateX(-50%);
 				z-index: 2;
 			}
 
@@ -1550,7 +1576,10 @@ footer {
 			display: flex;
 			align-items: center;
 			padding: 40px;
-			user-select: none;
+			-webkit-user-select: none;
+			   -moz-user-select: none;
+			    -ms-user-select: none;
+			        user-select: none;
 
 			@media screen and (max-width: 767px) {
 				flex: 1 1 100%;
@@ -1579,7 +1608,8 @@ footer {
 
 					&:before {
 						left: 0;
-						transform: translateY(-50%) rotate(45deg);
+						-webkit-transform: translateY(-50%) rotate(45deg);
+						        transform: translateY(-50%) rotate(45deg);
 					}
 				}
 
@@ -1594,7 +1624,8 @@ footer {
 
 					&:before {
 						right: 0;
-						transform: translateY(-50%) rotate(-135deg);
+						-webkit-transform: translateY(-50%) rotate(-135deg);
+						        transform: translateY(-50%) rotate(-135deg);
 					}
 				}
 			}
@@ -1655,11 +1686,13 @@ hr {
 		}
 
 		&:before {
-			transform: translate(-50%,-50%) rotate(45deg);
+			-webkit-transform: translate(-50%,-50%) rotate(45deg);
+			        transform: translate(-50%,-50%) rotate(45deg);
 		}
 
 		&:after {
-			transform: translate(-50%,-50%) rotate(-45deg);
+			-webkit-transform: translate(-50%,-50%) rotate(-45deg);
+			        transform: translate(-50%,-50%) rotate(-45deg);
 		}
 	}
 
@@ -1751,7 +1784,8 @@ hr {
 				background-position: center;
 				right: 20px;
 				top: 50%;
-				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				        transform: translateY(-50%);
 				border: none;
 				font-size: 0;
 				background-color: transparent;
@@ -1778,7 +1812,8 @@ hr {
 		background-color: #fff;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
 		z-index: 100;
 		text-align: center;
 
@@ -1818,7 +1853,8 @@ hr {
 		background-color: #fff;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
 		z-index: 100;
 		min-height: 480px;
 		display: none;
@@ -1880,7 +1916,8 @@ hr {
 					position: absolute;
 					top: 15px;
 					left: 50%;
-					transform: translateX(-50%);
+					-webkit-transform: translateX(-50%);
+					        transform: translateX(-50%);
 
 					@include respond-to(tablet) {
 						display: none;
