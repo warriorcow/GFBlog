@@ -716,9 +716,9 @@ main {
 		}
 
 		.article-more-btn {
-			position: absolute;
-			bottom: 0;
-			left: 0;
+			display: flex;
+      justify-content: center;
+      
 			background-color: #E5E5E5;
 			font-size: 16px;
 			text-align: center;
@@ -821,10 +821,10 @@ main {
 		}
 
 		&-socials {
-			max-height: 22px;
+			// max-height: 22px;
 			height: 100%;
-			margin-top: 40px;
-			margin-bottom: 40px;
+			margin-top: 30px;
+			margin-bottom: 30px;
 
 			a {
 				width: 100%;
@@ -833,6 +833,9 @@ main {
 				padding: 10px;
         transition: all 0.3s ease;
 
+				 svg {
+          height: 40px;
+				}
 				&:hover svg {
 					fill: #55c477;
 				}
@@ -867,7 +870,6 @@ main {
 					transition: .2s;
 					width: 100%;
 					max-width: 22px;
-					height: 100%;
 					fill: #000;
 				}
 			}
