@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 gulp.task('html', function(){
   gulp.src('app/*.html')
   .pipe(rigger())
-  .pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('docs'))
   .pipe(browserSync.reload({stream: true}))
 });
 
@@ -26,14 +26,14 @@ gulp.task('sass', function(){
     .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: true}))
     .pipe(minifycss())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('docs/css'))
     .pipe(browserSync.reload({stream: true}))
 });
 
 // Transfer Fonts
 gulp.task('fonts', function() {
     gulp.src('app/fonts/*.*')
-    .pipe(gulp.dest('dist/fonts/'))
+    .pipe(gulp.dest('docs/fonts/'))
 });
 
 
@@ -43,7 +43,7 @@ gulp.task('minlibs', function() {
     .pipe(rigger())
     .pipe(minifyjs())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/js/'))
+    .pipe(gulp.dest('docs/js/'))
     .pipe(browserSync.reload({stream: true}));
 });
 
@@ -54,7 +54,7 @@ gulp.task('minjs', function() {
     .pipe(rigger())
     .pipe(minifyjs())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/js/'))
+    .pipe(gulp.dest('docs/js/'))
     .pipe(browserSync.reload({stream: true}));
 });
 
@@ -62,7 +62,7 @@ gulp.task('minjs', function() {
 // Transfer image
 gulp.task('compress', function() {
   gulp.src('app/img/*')
-  .pipe(gulp.dest('dist/img'))
+  .pipe(gulp.dest('docs/img'))
 });
 
 
@@ -70,7 +70,7 @@ gulp.task('compress', function() {
 gulp.task('browser-sync', function(){
     browserSync({
       server: {
-        baseDir: 'dist',
+        baseDir: 'docs',
         index: "index.html"
       },
       notify: false
